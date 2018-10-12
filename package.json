@@ -1,6 +1,6 @@
 {
   "name": "vue-responsive-text",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue component that scales its child node in relation to its parent node's width",
   "license": "MIT",
 
