@@ -7,13 +7,13 @@ Inspired by @foisonocean's ['react-dynamic-font'](https://www.npmjs.com/package/
 Install the package from npm by running
 
 ```
-$ yarn add 'vue-responsive-text'
+$ yarn add vue-responsive-text
 ```
 
 or
 
 ```
-$ npm install --save 'vue-responsive-text'
+$ npm install --save vue-responsive-text
 ```
 
 ## Usage
