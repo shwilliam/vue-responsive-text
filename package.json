@@ -1,26 +1,22 @@
 {
   "name": "vue-responsive-text",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vue component that scales its child node in relation to its parent node's width",
   "license": "MIT",
-
   "main": "dist/vue-responsive-text.umd.js",
   "module": "dist/vue-responsive-text.esm.js",
   "unpkg": "dist/vue-responsive-text.min.js",
   "browser": {
     "./sfc": "src/vue-responsive-text.vue"
   },
-
   "scripts": {
+    "example": "vue serve ./examples/example-1.vue",
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-responsive-text.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-responsive-text.esm.js",
     "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-responsive-text.min.js"
   },
-
-  "dependencies": {
-  },
-
+  "dependencies": {},
   "devDependencies": {
     "minimist": "^1.2.0",
     "rollup": "^0.57.1",
