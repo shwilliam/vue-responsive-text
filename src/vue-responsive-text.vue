@@ -1,5 +1,5 @@
 <template>
-  <span class="responsive-text-wrapper" :style="scaleStyle">
+  <span class="responsive-text-wrapper" :style="{ ...scaleStyle, ...transitionStyle }">
     <slot></slot>
   </span>
 </template>
@@ -9,6 +9,13 @@ import { getNodeWidth } from "./utils.js";
 
 export default {
   name: "VueResponsiveText",
+  props: {
+    transition: {
+      type: Number,
+      required: false,
+      default: 0
+    }
+  },
   data() {
     return {
       scale: 1,
@@ -27,6 +34,15 @@ export default {
         MozTransform: scaleValue,
         transform: scaleValue
       };
+    },
+    transitionStyle() {
+      if (this.transition) return {
+        msTransition: `${this.transition}ms`,
+        WebkitTransition: `${this.transition}ms`,
+        OTransition: `${this.transition}ms`,
+        MozTransition: `${this.transition}ms`,
+        transition: `${this.transition}ms`
+      }
     }
   },
   methods: {
@@ -50,7 +66,7 @@ export default {
 </script>
 
 <style scoped>
-span.responsive-text-wrapper {
+.responsive-text-wrapper {
   display: inline-block;
   white-space: nowrap;
 
@@ -59,11 +75,5 @@ span.responsive-text-wrapper {
   -o-transform-origin: left;
   -moz-transform-origin: left;
   transform-origin: left;
-
-  -ms-transition: -ms-transform 500ms;
-  -webkit-transition: -webkit-transform 500ms;
-  -o-transition: -o-transform 500ms;
-  -moz-transition: -moz-transform 500ms;
-  transition: transform 500ms;
 }
 </style>

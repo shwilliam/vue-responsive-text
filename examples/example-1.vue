@@ -1,15 +1,24 @@
 <template>
   <div>
-    <div :style="{ width: textWrapperWidth + '%', backgroundColor: 'lightBlue', padding: '50px 0' }">
-      <VueResponsiveText>
+    <div :style="{ width: textWrapperWidth + '%', border: '1px solid #222', padding: '50px', marginBottom: '40px' }">
+      <VueResponsiveText :transition="transitionDuration">
         {{ inputText }}
       </VueResponsiveText>
     </div>
-    
-    <input type="text" v-model="inputText">
-    <input type="range" min="20" max="100" 
-      v-model="textWrapperWidth"
-    />
+
+    <div class="settings">
+      <input type="text" v-model="inputText">
+      <label>
+        div width:
+        <input type="range" min="20" max="100" 
+          v-model="textWrapperWidth"
+        />
+      </label>
+      <label>
+        transition (ms):
+        <input type="number" v-model="transitionDuration">
+      </label>
+    </div>
   </div>
 </template>
 
@@ -21,6 +30,7 @@ export default {
   data() {
     return {
       textWrapperWidth: 50,
+      transitionDuration: 100,
       inputText: "this text will scale"
     };
   },
@@ -29,3 +39,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.settings > * {
+  display: block;
+  line-height: 30px;
+}
+</style>
