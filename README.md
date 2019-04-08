@@ -48,7 +48,7 @@ export default {
 |transition|number |false   |0      |Transition duration in ms|
 
 ## Inspiration
-This component was inspired by by @foisonocean's ['react-dynamic-font'](https://www.npmjs.com/package/react-dynamic-font).
+This component was inspired by @foisonocean's ['react-dynamic-font'](https://www.npmjs.com/package/react-dynamic-font).
 
 ## Contributing
 This project is open to and encourages contributions! Feel free to discuss any bug fixes/features in the [issues](https://github.com/shwilliam/vue-responsive-text/issues). If you wish to work on this project:
